@@ -12,7 +12,7 @@ Flashing
 One bash script is available to flash the Acme Systems boards:
 * acme-flash-arietta.sh: to flash Arietta-G25 and Arietta-G25-256 boards.
 
-Instructions to use them are available in my Github at https://github.com/myfreescalewebpage/meta-acme.
+Instructions to use them are available in my Github at https://github.com/joelguittet/meta-acme.
 
 
 Debug
@@ -26,7 +26,7 @@ The 3.3V TTL serial interface is available on debug pins on Acme Systems boards.
 
 The following schema can be used to interface the 3.3V TTL interface to an RS232 compatible port.
 
-![acme-serial-debug-rs232](https://github.com/myfreescalewebpage/acme-tools/blob/master/acme-serial-debug-rs232.png)
+![acme-serial-debug-rs232](https://github.com/joelguittet/acme-tools/blob/master/acme-serial-debug-rs232.png)
 
 It is also possible to use an FTDI USB to 3.3V TTL converter.
 
