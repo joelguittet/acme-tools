@@ -19,7 +19,6 @@ UBOOT_ENV="$IMAGES_DIR/uboot.env"
 DTB="$IMAGES_DIR/at91-ariettag25.dtb"
 KERNEL="$IMAGES_DIR/zImage"
 ROOTFS="$IMAGES_DIR/rootfs.tar.gz"
-MODULES="$IMAGES_DIR/modules.tar.gz"
 
 if [[ ! -e "${AT91BOOTSTRAP}" ]]; then
   echo "ERROR: file ${AT91BOOTSTRAP} not found"
@@ -43,10 +42,6 @@ if [[ ! -e "${KERNEL}" ]]; then
 fi
 if [[ ! -e "${ROOTFS}" ]]; then
   echo "ERROR: file ${ROOTFS} not found"
-  exit 1
-fi
-if [[ ! -e "${MODULES}" ]]; then
-  echo "ERROR: file ${MODULES} not found"
   exit 1
 fi
 
@@ -79,7 +74,6 @@ cp "$UBOOT_ENV" "$TMPDIR/boot"
 cp "$DTB" "$TMPDIR/boot"
 cp "$KERNEL" "$TMPDIR/boot"
 tar -xf "$ROOTFS" -C "$TMPDIR/rootfs"
-tar -xf "$MODULES" -C "$TMPDIR/rootfs"
 sync
 for device in /dev/$DISK[0-9]; do umount -f $device; done
 echo OK
